@@ -26,7 +26,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 
 <body>
@@ -436,11 +436,217 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="&#x4E8C;&#x7EF4;&#x80FD;&#x5E26;&#x7684;&#x5904;&#x7406;&#x65B9;&#x6CD5;"><a href="#&#x4E8C;&#x7EF4;&#x80FD;&#x5E26;&#x7684;&#x5904;&#x7406;&#x65B9;&#x6CD5;" class="headerlink" title="&#x4E8C;&#x7EF4;&#x80FD;&#x5E26;&#x7684;&#x5904;&#x7406;&#x65B9;&#x6CD5;"></a>&#x4E8C;&#x7EF4;&#x80FD;&#x5E26;&#x7684;&#x5904;&#x7406;&#x65B9;&#x6CD5;</h1><h2 id="self-consistent-field-calculation-and-none-self-consistent-calculation-is-prepared"><a href="#self-consistent-field-calculation-and-none-self-consistent-calculation-is-prepared" class="headerlink" title="self-consistent field calculation and none self-consistent calculation is prepared"></a>self-consistent field calculation and none self-consistent calculation is prepared</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">&amp;control</span><br><span class="line">    calculation = &apos;scf&apos;,</span><br><span class="line">    verbosity = &apos;low&apos;</span><br><span class="line">    prefix = &apos;PTEB&apos;</span><br><span class="line">    outdir = &apos;./tmp/&apos;</span><br><span class="line">    pseudo_dir = &apos;/mnt/e/calculatechemistry/FirstPrinciple/BURAI1.3.2_Windows/pseudopot/&apos;</span><br><span class="line"> /</span><br><span class="line"> &amp;system</span><br><span class="line">    a           =  1.64969e+01</span><br><span class="line">    b           =  1.64809e+01</span><br><span class="line">    c           =  5.00000e+01</span><br><span class="line">    cosab       = -5.00000e-01</span><br><span class="line">    degauss     =  1.00000e-02</span><br><span class="line">    ecutrho     =  150</span><br><span class="line">    ecutwfc     =  25</span><br><span class="line">    ibrav       = 12</span><br><span class="line">    nat         = 30</span><br><span class="line">    ntyp        = 2</span><br><span class="line">    occupations = &apos;smearing&apos;,</span><br><span class="line">    smearing = &apos;gauss&apos;,</span><br><span class="line">    degauss = 0.01</span><br><span class="line"> /</span><br><span class="line"> &amp;electrons</span><br><span class="line">    mixing_beta = 0.7</span><br><span class="line"> /</span><br><span class="line"> &amp;IONS</span><br><span class="line">	ion_dynamics = &apos;bfgs&apos;</span><br><span class="line">/</span><br><span class="line"></span><br><span class="line">ATOMIC_SPECIES</span><br><span class="line">C      12.01070  C.pbe-rrkjus.UPF</span><br><span class="line">H       1.00794  H.pbe-rrkjus.UPF</span><br><span class="line"></span><br><span class="line">ATOMIC_POSITIONS {angstrom}</span><br><span class="line">C       3.759785   7.611155  14.310000</span><br><span class="line">C       3.760673   9.047720  14.311500</span><br><span class="line">C       2.543351   9.754656  14.318500</span><br><span class="line">C       2.540098  11.162104  14.319500</span><br><span class="line">C       4.977963   9.754085  14.308000</span><br><span class="line">C       4.981391  11.161391  14.309500</span><br><span class="line">C       1.295809  11.880316  14.324000</span><br><span class="line">C       3.760766  11.862617  14.315500</span><br><span class="line">C       6.225577  11.879459  14.306000</span><br><span class="line">C      -6.953221  13.788314  14.301000</span><br><span class="line">C      -4.488410  13.804585  14.308000</span><br><span class="line">C       2.531580   0.233219  14.300500</span><br><span class="line">C       2.534926   1.640667  14.296500</span><br><span class="line">C      -2.023371  13.787029  14.320000</span><br><span class="line">C       4.972708   0.232220  14.309500</span><br><span class="line">C       4.969455   1.639668  14.307000</span><br><span class="line">C       3.752380   2.346747  14.301000</span><br><span class="line">C       3.753598   3.783312  14.299500</span><br><span class="line">C       0.234245  12.489482  14.323000</span><br><span class="line">C       3.757615   6.387113  14.301500</span><br><span class="line">C       8.482504  13.178148  14.300000</span><br><span class="line">C       3.755934   5.007354  14.298500</span><br><span class="line">C      -0.961807  13.177863  14.321500</span><br><span class="line">C       7.286753  12.489625  14.300000</span><br><span class="line">H       1.602888   9.212001  14.325000</span><br><span class="line">H       5.918147   9.210859  14.304000</span><br><span class="line">H       3.761210  12.948498  14.315500</span><br><span class="line">H      -4.488936  12.718847  14.312000</span><br><span class="line">H       1.594577   2.183608  14.290000</span><br><span class="line">H       5.909835   2.182466  14.310500</span><br><span class="line"></span><br><span class="line">K_POINTS {automatic}</span><br><span class="line">2 2 2 0 0 0</span><br></pre></td></tr></table></figure>
-<h2 id="none-self-consistent-field-calculation"><a href="#none-self-consistent-field-calculation" class="headerlink" title="none self-consistent field calculation"></a>none self-consistent field calculation</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"> &amp;control</span><br><span class="line">    calculation = &apos;nscf&apos;,</span><br><span class="line">    verbosity = &apos;low&apos;</span><br><span class="line">    prefix = &apos;PTEB&apos;</span><br><span class="line">    outdir = &apos;./tmp/&apos;</span><br><span class="line">    pseudo_dir = &apos;/mnt/e/calculatechemistry/FirstPrinciple/BURAI1.3.2_Windows/pseudopot/&apos;</span><br><span class="line"> /</span><br><span class="line"> &amp;system</span><br><span class="line">    a           =  1.64969e+01</span><br><span class="line">    b           =  1.64809e+01</span><br><span class="line">    c           =  5.00000e+01</span><br><span class="line">    cosab       = -5.00000e-01</span><br><span class="line">    degauss     =  1.00000e-02</span><br><span class="line">    ecutrho     =  150</span><br><span class="line">    ecutwfc     =  25</span><br><span class="line">    ibrav       = 12</span><br><span class="line">    nat         = 30</span><br><span class="line">    ntyp        = 2</span><br><span class="line">    occupations = &apos;smearing&apos;,</span><br><span class="line">    smearing = &apos;gauss&apos;,</span><br><span class="line">    degauss = 0.01</span><br><span class="line"> /</span><br><span class="line"> &amp;electrons</span><br><span class="line">    mixing_beta = 0.7</span><br><span class="line"> /</span><br><span class="line"> &amp;IONS</span><br><span class="line">	ion_dynamics = &apos;bfgs&apos;</span><br><span class="line">/</span><br><span class="line"></span><br><span class="line">ATOMIC_SPECIES</span><br><span class="line">C      12.01070  C.pbe-rrkjus.UPF</span><br><span class="line">H       1.00794  H.pbe-rrkjus.UPF</span><br><span class="line"></span><br><span class="line">ATOMIC_POSITIONS {angstrom}</span><br><span class="line">C       3.759785   7.611155  14.310000</span><br><span class="line">C       3.760673   9.047720  14.311500</span><br><span class="line">C       2.543351   9.754656  14.318500</span><br><span class="line">C       2.540098  11.162104  14.319500</span><br><span class="line">C       4.977963   9.754085  14.308000</span><br><span class="line">C       4.981391  11.161391  14.309500</span><br><span class="line">C       1.295809  11.880316  14.324000</span><br><span class="line">C       3.760766  11.862617  14.315500</span><br><span class="line">C       6.225577  11.879459  14.306000</span><br><span class="line">C      -6.953221  13.788314  14.301000</span><br><span class="line">C      -4.488410  13.804585  14.308000</span><br><span class="line">C       2.531580   0.233219  14.300500</span><br><span class="line">C       2.534926   1.640667  14.296500</span><br><span class="line">C      -2.023371  13.787029  14.320000</span><br><span class="line">C       4.972708   0.232220  14.309500</span><br><span class="line">C       4.969455   1.639668  14.307000</span><br><span class="line">C       3.752380   2.346747  14.301000</span><br><span class="line">C       3.753598   3.783312  14.299500</span><br><span class="line">C       0.234245  12.489482  14.323000</span><br><span class="line">C       3.757615   6.387113  14.301500</span><br><span class="line">C       8.482504  13.178148  14.300000</span><br><span class="line">C       3.755934   5.007354  14.298500</span><br><span class="line">C      -0.961807  13.177863  14.321500</span><br><span class="line">C       7.286753  12.489625  14.300000</span><br><span class="line">H       1.602888   9.212001  14.325000</span><br><span class="line">H       5.918147   9.210859  14.304000</span><br><span class="line">H       3.761210  12.948498  14.315500</span><br><span class="line">H      -4.488936  12.718847  14.312000</span><br><span class="line">H       1.594577   2.183608  14.290000</span><br><span class="line">H       5.909835   2.182466  14.310500</span><br><span class="line"></span><br><span class="line">K_POINTS {automatic}</span><br><span class="line">3 3 1 0 0 0</span><br></pre></td></tr></table></figure>
-<h2 id="band-calculation"><a href="#band-calculation" class="headerlink" title="band calculation"></a>band calculation</h2><h3 id="Similar-to-ordinary-band-calculation-but-requires-more-sampling-points"><a href="#Similar-to-ordinary-band-calculation-but-requires-more-sampling-points" class="headerlink" title="Similar to ordinary band calculation, but requires more sampling points."></a>Similar to ordinary band calculation, but requires more sampling points.</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"> &amp;control</span><br><span class="line">    calculation = &apos;bands&apos;,</span><br><span class="line">    verbosity = &apos;low&apos;</span><br><span class="line">    prefix = &apos;PTEB&apos;</span><br><span class="line">    outdir = &apos;./tmp/&apos;</span><br><span class="line">    pseudo_dir = &apos;/mnt/e/calculatechemistry/FirstPrinciple/BURAI1.3.2_Windows/pseudopot/&apos;</span><br><span class="line"> /</span><br><span class="line"> &amp;system</span><br><span class="line">    a           =  1.64969e+01</span><br><span class="line">    b           =  1.64809e+01</span><br><span class="line">    c           =  5.00000e+01</span><br><span class="line">    cosab       = -5.00000e-01</span><br><span class="line">    degauss     =  1.00000e-02</span><br><span class="line">    ecutrho     =  150</span><br><span class="line">    ecutwfc     =  25</span><br><span class="line">    ibrav       = 12</span><br><span class="line">    nat         = 30</span><br><span class="line">    ntyp        = 2</span><br><span class="line">    occupations = &apos;smearing&apos;,</span><br><span class="line">    smearing = &apos;gauss&apos;,</span><br><span class="line">    degauss = 0.01</span><br><span class="line"> /</span><br><span class="line"> &amp;electrons</span><br><span class="line">    mixing_beta = 0.7</span><br><span class="line"> /</span><br><span class="line"> &amp;IONS</span><br><span class="line">	ion_dynamics = &apos;bfgs&apos;</span><br><span class="line">/</span><br><span class="line"></span><br><span class="line">ATOMIC_SPECIES</span><br><span class="line">C      12.01070  C.pbe-rrkjus.UPF</span><br><span class="line">H       1.00794  H.pbe-rrkjus.UPF</span><br><span class="line"></span><br><span class="line">ATOMIC_POSITIONS {angstrom}</span><br><span class="line">C       3.759785   7.611155  14.310000</span><br><span class="line">C       3.760673   9.047720  14.311500</span><br><span class="line">C       2.543351   9.754656  14.318500</span><br><span class="line">C       2.540098  11.162104  14.319500</span><br><span class="line">C       4.977963   9.754085  14.308000</span><br><span class="line">C       4.981391  11.161391  14.309500</span><br><span class="line">C       1.295809  11.880316  14.324000</span><br><span class="line">C       3.760766  11.862617  14.315500</span><br><span class="line">C       6.225577  11.879459  14.306000</span><br><span class="line">C      -6.953221  13.788314  14.301000</span><br><span class="line">C      -4.488410  13.804585  14.308000</span><br><span class="line">C       2.531580   0.233219  14.300500</span><br><span class="line">C       2.534926   1.640667  14.296500</span><br><span class="line">C      -2.023371  13.787029  14.320000</span><br><span class="line">C       4.972708   0.232220  14.309500</span><br><span class="line">C       4.969455   1.639668  14.307000</span><br><span class="line">C       3.752380   2.346747  14.301000</span><br><span class="line">C       3.753598   3.783312  14.299500</span><br><span class="line">C       0.234245  12.489482  14.323000</span><br><span class="line">C       3.757615   6.387113  14.301500</span><br><span class="line">C       8.482504  13.178148  14.300000</span><br><span class="line">C       3.755934   5.007354  14.298500</span><br><span class="line">C      -0.961807  13.177863  14.321500</span><br><span class="line">C       7.286753  12.489625  14.300000</span><br><span class="line">H       1.602888   9.212001  14.325000</span><br><span class="line">H       5.918147   9.210859  14.304000</span><br><span class="line">H       3.761210  12.948498  14.315500</span><br><span class="line">H      -4.488936  12.718847  14.312000</span><br><span class="line">H       1.594577   2.183608  14.290000</span><br><span class="line">H       5.909835   2.182466  14.310500</span><br><span class="line"></span><br><span class="line">K_POINTS {crystal_c}</span><br><span class="line">3</span><br><span class="line">0.0000000000    0.0000000000    0.0000000000    10</span><br><span class="line">0.0000000000    0.5000000000    0.0000000000    10</span><br><span class="line">0.0000000000    0.5000000000    0.5000000000    10</span><br></pre></td></tr></table></figure>
-<h2 id="postprocess"><a href="#postprocess" class="headerlink" title="postprocess"></a>postprocess</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&amp;bands</span><br><span class="line">prefix=&apos;PTEB&apos;</span><br><span class="line">outdir=&apos;tmp&apos;</span><br><span class="line">filband=&apos;PTEBband.dat&apos;</span><br><span class="line">plot_2d=.true.</span><br><span class="line">/</span><br></pre></td></tr></table></figure>
-<h2 id="PTEBband-dat-will-be-obtained-It-has-the-xk-yk-energy-format"><a href="#PTEBband-dat-will-be-obtained-It-has-the-xk-yk-energy-format" class="headerlink" title="PTEBband.dat* will be obtained. It has the xk,yk, energy format"></a>PTEBband.dat* will be obtained. It has the xk,yk, energy format</h2>
+                <h1 id="&#x4E8C;&#x7EF4;&#x80FD;&#x5E26;&#x7684;&#x5904;&#x7406;&#x65B9;&#x6CD5;"><a href="#&#x4E8C;&#x7EF4;&#x80FD;&#x5E26;&#x7684;&#x5904;&#x7406;&#x65B9;&#x6CD5;" class="headerlink" title="&#x4E8C;&#x7EF4;&#x80FD;&#x5E26;&#x7684;&#x5904;&#x7406;&#x65B9;&#x6CD5;"></a>&#x4E8C;&#x7EF4;&#x80FD;&#x5E26;&#x7684;&#x5904;&#x7406;&#x65B9;&#x6CD5;</h1><h2 id="self-consistent-field-calculation-and-none-self-consistent-calculation-is-prepared"><a href="#self-consistent-field-calculation-and-none-self-consistent-calculation-is-prepared" class="headerlink" title="self-consistent field calculation and none self-consistent calculation is prepared"></a>self-consistent field calculation and none self-consistent calculation is prepared</h2><pre><code>&amp;control
+    calculation = &apos;scf&apos;,
+    verbosity = &apos;low&apos;
+    prefix = &apos;PTEB&apos;
+    outdir = &apos;./tmp/&apos;
+    pseudo_dir = &apos;/mnt/e/calculatechemistry/FirstPrinciple/BURAI1.3.2_Windows/pseudopot/&apos;
+ /
+ &amp;system
+    a           =  1.64969e+01
+    b           =  1.64809e+01
+    c           =  5.00000e+01
+    cosab       = -5.00000e-01
+    degauss     =  1.00000e-02
+    ecutrho     =  150
+    ecutwfc     =  25
+    ibrav       = 12
+    nat         = 30
+    ntyp        = 2
+    occupations = &apos;smearing&apos;,
+    smearing = &apos;gauss&apos;,
+    degauss = 0.01
+ /
+ &amp;electrons
+    mixing_beta = 0.7
+ /
+ &amp;IONS
+    ion_dynamics = &apos;bfgs&apos;
+/
+
+ATOMIC_SPECIES
+C      12.01070  C.pbe-rrkjus.UPF
+H       1.00794  H.pbe-rrkjus.UPF
+
+ATOMIC_POSITIONS {angstrom}
+C       3.759785   7.611155  14.310000
+C       3.760673   9.047720  14.311500
+C       2.543351   9.754656  14.318500
+C       2.540098  11.162104  14.319500
+C       4.977963   9.754085  14.308000
+C       4.981391  11.161391  14.309500
+C       1.295809  11.880316  14.324000
+C       3.760766  11.862617  14.315500
+C       6.225577  11.879459  14.306000
+C      -6.953221  13.788314  14.301000
+C      -4.488410  13.804585  14.308000
+C       2.531580   0.233219  14.300500
+C       2.534926   1.640667  14.296500
+C      -2.023371  13.787029  14.320000
+C       4.972708   0.232220  14.309500
+C       4.969455   1.639668  14.307000
+C       3.752380   2.346747  14.301000
+C       3.753598   3.783312  14.299500
+C       0.234245  12.489482  14.323000
+C       3.757615   6.387113  14.301500
+C       8.482504  13.178148  14.300000
+C       3.755934   5.007354  14.298500
+C      -0.961807  13.177863  14.321500
+C       7.286753  12.489625  14.300000
+H       1.602888   9.212001  14.325000
+H       5.918147   9.210859  14.304000
+H       3.761210  12.948498  14.315500
+H      -4.488936  12.718847  14.312000
+H       1.594577   2.183608  14.290000
+H       5.909835   2.182466  14.310500
+
+K_POINTS {automatic}
+2 2 2 0 0 0
+</code></pre><h2 id="none-self-consistent-field-calculation"><a href="#none-self-consistent-field-calculation" class="headerlink" title="none self-consistent field calculation"></a>none self-consistent field calculation</h2><pre><code> &amp;control
+    calculation = &apos;nscf&apos;,
+    verbosity = &apos;low&apos;
+    prefix = &apos;PTEB&apos;
+    outdir = &apos;./tmp/&apos;
+    pseudo_dir = &apos;/mnt/e/calculatechemistry/FirstPrinciple/BURAI1.3.2_Windows/pseudopot/&apos;
+ /
+ &amp;system
+    a           =  1.64969e+01
+    b           =  1.64809e+01
+    c           =  5.00000e+01
+    cosab       = -5.00000e-01
+    degauss     =  1.00000e-02
+    ecutrho     =  150
+    ecutwfc     =  25
+    ibrav       = 12
+    nat         = 30
+    ntyp        = 2
+    occupations = &apos;smearing&apos;,
+    smearing = &apos;gauss&apos;,
+    degauss = 0.01
+ /
+ &amp;electrons
+    mixing_beta = 0.7
+ /
+ &amp;IONS
+    ion_dynamics = &apos;bfgs&apos;
+/
+
+ATOMIC_SPECIES
+C      12.01070  C.pbe-rrkjus.UPF
+H       1.00794  H.pbe-rrkjus.UPF
+
+ATOMIC_POSITIONS {angstrom}
+C       3.759785   7.611155  14.310000
+C       3.760673   9.047720  14.311500
+C       2.543351   9.754656  14.318500
+C       2.540098  11.162104  14.319500
+C       4.977963   9.754085  14.308000
+C       4.981391  11.161391  14.309500
+C       1.295809  11.880316  14.324000
+C       3.760766  11.862617  14.315500
+C       6.225577  11.879459  14.306000
+C      -6.953221  13.788314  14.301000
+C      -4.488410  13.804585  14.308000
+C       2.531580   0.233219  14.300500
+C       2.534926   1.640667  14.296500
+C      -2.023371  13.787029  14.320000
+C       4.972708   0.232220  14.309500
+C       4.969455   1.639668  14.307000
+C       3.752380   2.346747  14.301000
+C       3.753598   3.783312  14.299500
+C       0.234245  12.489482  14.323000
+C       3.757615   6.387113  14.301500
+C       8.482504  13.178148  14.300000
+C       3.755934   5.007354  14.298500
+C      -0.961807  13.177863  14.321500
+C       7.286753  12.489625  14.300000
+H       1.602888   9.212001  14.325000
+H       5.918147   9.210859  14.304000
+H       3.761210  12.948498  14.315500
+H      -4.488936  12.718847  14.312000
+H       1.594577   2.183608  14.290000
+H       5.909835   2.182466  14.310500
+
+K_POINTS {automatic}
+3 3 1 0 0 0
+</code></pre><h2 id="band-calculation"><a href="#band-calculation" class="headerlink" title="band calculation"></a>band calculation</h2><h3 id="Similar-to-ordinary-band-calculation-but-requires-more-sampling-points"><a href="#Similar-to-ordinary-band-calculation-but-requires-more-sampling-points" class="headerlink" title="Similar to ordinary band calculation, but requires more sampling points."></a>Similar to ordinary band calculation, but requires more sampling points.</h3><pre><code> &amp;control
+    calculation = &apos;bands&apos;,
+    verbosity = &apos;low&apos;
+    prefix = &apos;PTEB&apos;
+    outdir = &apos;./tmp/&apos;
+    pseudo_dir = &apos;/mnt/e/calculatechemistry/FirstPrinciple/BURAI1.3.2_Windows/pseudopot/&apos;
+ /
+ &amp;system
+    a           =  1.64969e+01
+    b           =  1.64809e+01
+    c           =  5.00000e+01
+    cosab       = -5.00000e-01
+    degauss     =  1.00000e-02
+    ecutrho     =  150
+    ecutwfc     =  25
+    ibrav       = 12
+    nat         = 30
+    ntyp        = 2
+    occupations = &apos;smearing&apos;,
+    smearing = &apos;gauss&apos;,
+    degauss = 0.01
+ /
+ &amp;electrons
+    mixing_beta = 0.7
+ /
+ &amp;IONS
+    ion_dynamics = &apos;bfgs&apos;
+/
+
+ATOMIC_SPECIES
+C      12.01070  C.pbe-rrkjus.UPF
+H       1.00794  H.pbe-rrkjus.UPF
+
+ATOMIC_POSITIONS {angstrom}
+C       3.759785   7.611155  14.310000
+C       3.760673   9.047720  14.311500
+C       2.543351   9.754656  14.318500
+C       2.540098  11.162104  14.319500
+C       4.977963   9.754085  14.308000
+C       4.981391  11.161391  14.309500
+C       1.295809  11.880316  14.324000
+C       3.760766  11.862617  14.315500
+C       6.225577  11.879459  14.306000
+C      -6.953221  13.788314  14.301000
+C      -4.488410  13.804585  14.308000
+C       2.531580   0.233219  14.300500
+C       2.534926   1.640667  14.296500
+C      -2.023371  13.787029  14.320000
+C       4.972708   0.232220  14.309500
+C       4.969455   1.639668  14.307000
+C       3.752380   2.346747  14.301000
+C       3.753598   3.783312  14.299500
+C       0.234245  12.489482  14.323000
+C       3.757615   6.387113  14.301500
+C       8.482504  13.178148  14.300000
+C       3.755934   5.007354  14.298500
+C      -0.961807  13.177863  14.321500
+C       7.286753  12.489625  14.300000
+H       1.602888   9.212001  14.325000
+H       5.918147   9.210859  14.304000
+H       3.761210  12.948498  14.315500
+H      -4.488936  12.718847  14.312000
+H       1.594577   2.183608  14.290000
+H       5.909835   2.182466  14.310500
+
+K_POINTS {crystal_c}
+3
+0.0000000000    0.0000000000    0.0000000000    10
+0.0000000000    0.5000000000    0.0000000000    10
+0.0000000000    0.5000000000    0.5000000000    10
+</code></pre><h2 id="postprocess"><a href="#postprocess" class="headerlink" title="postprocess"></a>postprocess</h2><pre><code>&amp;bands
+prefix=&apos;PTEB&apos;
+outdir=&apos;tmp&apos;
+filband=&apos;PTEBband.dat&apos;
+plot_2d=.true.
+/
+</code></pre><h2 id="PTEBband-dat-will-be-obtained-It-has-the-xk-yk-energy-format"><a href="#PTEBband-dat-will-be-obtained-It-has-the-xk-yk-energy-format" class="headerlink" title="PTEBband.dat* will be obtained. It has the xk,yk, energy format"></a>PTEBband.dat* will be obtained. It has the xk,yk, energy format</h2>
             </div>
             <hr/>
 
